@@ -9,6 +9,19 @@ import ContactView from './components/ContactView'
 
 function App() {
   const [activeContact, setActiveContact] = useState(null);
+  const [windowSize, setWindowSize] = useState(getWindowSize())
+
+  useEffect(() => {
+    function handleWindowResize() {
+      setWindowSize(getWindowSize());
+    }
+
+    window.addEventListener('resize', handleWindowResize);
+
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    };
+  }, []);
 
   return (
     // <ThemeProvider theme={theme}>
