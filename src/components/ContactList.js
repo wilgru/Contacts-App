@@ -13,11 +13,19 @@ function ContactList(props) {
     const [selectedIndex, setSelectedIndex] = React.useState(1);
     const [users, setUsers] = React.useState(null);
 
+    const display = props.activeContact ? 'none' : 'block'
+
     const handleListItemClick = (event, index, user) => {
       setSelectedIndex(index);
       props.setActiveContact(user);
     };
   
+    React.useEffect(() => {
+        if (props.activeContact === null) {
+            setSelectedIndex(null);
+        }
+    }, [props.activeContact]);
+
     React.useEffect(() => {
         axios.get('https://jsonplaceholder.typicode.com/users')
         .then((response) => {
@@ -25,11 +33,9 @@ function ContactList(props) {
             console.log(users)
         });
     }, []);
-  
-    // if (!users) return null;
 
     return (
-        <Grid item xs={3}>
+        <Grid item xs={12} md={3} sx={{display: { 'xs':display, 'md':'block' }}}>
             {
                 !users ? (
                     <h1>
