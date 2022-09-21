@@ -2,10 +2,29 @@ import './App.css';
 import { useState, useEffect } from 'react';
 
 import { Grid, Paper } from '@mui/material';
-import ThemeProvider from '@mui/material';
+import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
+import { orange } from '@mui/material/colors';
 
 import ContactList from './components/ContactList'
 import ContactView from './components/ContactView'
+
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      light: orange[50],
+      main: orange[600],
+      dark: orange[700],
+      contrastText: '#fff',
+    },
+    secondary: {
+      light: '#ff7961',
+      main: '#f44336',
+      dark: '#ba000d',
+      contrastText: '#000',
+    },
+  },
+});
 
 function App() {
   const [activeContact, setActiveContact] = useState(null);
@@ -24,14 +43,14 @@ function App() {
   }, []);
 
   return (
-    // <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme}>
       <div className="App" style={{"display": "flex", "alignItems": "center", "height": "100vh"}}>
         <Grid container spacing={2} style={{"padding": "40px", "height": "90vh"}}>
           <ContactList setActiveContact={setActiveContact} activeContact={activeContact} isSmallScreen={smallScreen}></ContactList>
           <ContactView setActiveContact={setActiveContact} activeContact={activeContact} isSmallScreen={smallScreen}></ContactView>
         </Grid>
       </div>
-    // </ThemeProvider>
+    </ThemeProvider>
   );
 }
 
