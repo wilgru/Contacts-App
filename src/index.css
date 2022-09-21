@@ -21,12 +21,11 @@ a {
 }
 
 .contact-view-item {
-  margin: 25px;
+  margin: 25px 0;
 }
 
 .contact-address-item {
   padding: 1px 20px;
-  background-color: rgb(235, 235, 235) !important;
 }
 
 .contact-address-item p {
