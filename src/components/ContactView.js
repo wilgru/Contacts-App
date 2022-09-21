@@ -29,7 +29,7 @@ function ContactView(props) {
                         <p>{props.activeContact.company.name}</p>
                     </Grid>
 
-                    <Divider variant="middle" />
+                    <Divider variant="middle" sx={{margin:'0'}}/>
 
                     <Grid className="contact-view-item" container justifyContent="space-between" wrap='wrap'>
                         <Grid item md={6} xs={12}>
@@ -40,7 +40,7 @@ function ContactView(props) {
                         </Grid>
                     </Grid>
 
-                    <Divider variant="middle" />
+                    <Divider variant="middle" sx={{margin:'0'}}/>
 
                     <Grid className="contact-view-item" container justifyContent="space-between" wrap='wrap'>
                         <Grid item md={6} xs={12}>
@@ -51,7 +51,7 @@ function ContactView(props) {
                         </Grid>
                     </Grid>
 
-                    <Divider variant="middle" />
+                    <Divider variant="middle" sx={{margin:'0'}}/>
 
                     <Grid className="contact-view-item" container justifyContent="space-between" wrap='wrap'>
                         <Grid item md={6} xs={12}>
@@ -70,7 +70,7 @@ function ContactView(props) {
                         </Grid>
                     </Grid>
 
-                    <Divider variant="middle" />
+                    <Divider variant="middle" sx={{margin:'0'}}/>
 
                     <Grid className="contact-view-item" container justifyContent="space-between" wrap='wrap'>
                         <Grid item md={6} xs={12}>
