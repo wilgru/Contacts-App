@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Grid, Paper } from '@mui/material';
 
 import Button from '@mui/material/Button';
+import Divider from '@mui/material/Divider';
 
 function ContactView(props) {
     const [display, setDisplay] = useState(props.activeContact ? 'block' : 'none');
@@ -17,10 +18,10 @@ function ContactView(props) {
                 <Paper elevation={8} style={{"minHeight": "530px", "textAlign": "left", "padding": "10px"}}>
                     <Button variant="text" sx={{display: { 'xs':'block', 'md':'none' }}} onClick={()=>props.setActiveContact(null)}>Close</Button>
                     
-                    <div style={{"width": "100%"}}>
+                    <Grid className="contact-view-item" container flexDirection="column" justifyContent="space-between" wrap='wrap'>
                         <h1>{props.activeContact.name}</h1>
                         <p>{props.activeContact.company.name}</p>
-                    </div>
+                    </Grid>
 
                     <Grid className="contact-view-item" container justifyContent="space-between" wrap='wrap'>
                         <Grid item md={6} xs={12}>
@@ -31,6 +32,8 @@ function ContactView(props) {
                         </Grid>
                     </Grid>
 
+                    <Divider variant="middle" />
+
                     <Grid className="contact-view-item" container justifyContent="space-between" wrap='wrap'>
                         <Grid item md={6} xs={12}>
                             <p>Email</p>
@@ -39,6 +42,8 @@ function ContactView(props) {
                             <a href = {`mailto: ${props.activeContact.email}`}>{props.activeContact.email}</a> 
                         </Grid>
                     </Grid>
+
+                    <Divider variant="middle" />
 
                     <Grid className="contact-view-item" container justifyContent="space-between" wrap='wrap'>
                         <Grid item md={6} xs={12}>
@@ -56,6 +61,8 @@ function ContactView(props) {
 
                         </Grid>
                     </Grid>
+
+                    <Divider variant="middle" />
 
                     <Grid className="contact-view-item" container justifyContent="space-between" wrap='wrap'>
                         <Grid item md={6} xs={12}>
