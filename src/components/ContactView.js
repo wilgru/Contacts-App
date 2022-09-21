@@ -13,15 +13,13 @@ function ContactView(props) {
     }, [props.activeContact]);
 
     return (
-        <Grid item xs={12} md={9} height="100" sx={{display: { 'xs':display, 'md':'block' }}}>
+        <Grid item xs={12} md={9} sx={{display: { 'xs':display, 'md':'block' }}}>
             {props.activeContact ? (
-                <Paper elevation={8} style={{"minHeight": "530px", "textAlign": "left", "padding": "10px"}}>
+                <Paper elevation={3} sx={{minHeight: "100%", textAlign: "left", padding: "10px"}}>
                     <Button 
                         variant="text" 
                         sx={{display: { 'xs':'block', 'md':'none' }}} 
-                        onClick={
-                            ()=>props.setActiveContact(null)
-                        }
+                        onClick={()=>props.setActiveContact(null)}
                     >
                         Close
                     </Button>
@@ -60,7 +58,7 @@ function ContactView(props) {
                             <p>Address</p>
                         </Grid>
                         <Grid item md={4} xs={12}>
-                            <Paper className="contact-address-item">
+                            <Paper className="contact-address-item" sx={{backgroundColor: 'primary.light'}}>
                                 <p>{props.activeContact.address.street}</p>
                                 <p>{props.activeContact.address.suite}</p>
                                 <p>{props.activeContact.address.city}</p>
