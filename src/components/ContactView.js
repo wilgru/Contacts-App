@@ -16,12 +16,22 @@ function ContactView(props) {
         <Grid item xs={12} md={9} height="100" sx={{display: { 'xs':display, 'md':'block' }}}>
             {props.activeContact ? (
                 <Paper elevation={8} style={{"minHeight": "530px", "textAlign": "left", "padding": "10px"}}>
-                    <Button variant="text" sx={{display: { 'xs':'block', 'md':'none' }}} onClick={()=>props.setActiveContact(null)}>Close</Button>
+                    <Button 
+                        variant="text" 
+                        sx={{display: { 'xs':'block', 'md':'none' }}} 
+                        onClick={
+                            ()=>props.setActiveContact(null)
+                        }
+                    >
+                        Close
+                    </Button>
                     
                     <Grid className="contact-view-item" container flexDirection="column" justifyContent="space-between" wrap='wrap'>
                         <h1>{props.activeContact.name}</h1>
                         <p>{props.activeContact.company.name}</p>
                     </Grid>
+
+                    <Divider variant="middle" />
 
                     <Grid className="contact-view-item" container justifyContent="space-between" wrap='wrap'>
                         <Grid item md={6} xs={12}>
