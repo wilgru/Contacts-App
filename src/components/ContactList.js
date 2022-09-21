@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState, useEffect } from 'react';
 import { Grid, Paper } from '@mui/material';
 import axios from 'axios';
 import List from '@mui/material/List';
@@ -10,23 +10,30 @@ import ListItemAvatar from '@mui/material/ListItemAvatar';
 import ListItemIcon from '@mui/material/ListItemIcon';
 
 function ContactList(props) {
-    const [selectedIndex, setSelectedIndex] = React.useState(1);
-    const [users, setUsers] = React.useState(null);
+    const [selectedIndex, setSelectedIndex] = useState(1);
+    const [users, setUsers] = useState(null);
+    const [display, setDisplay] = useState(props.activeContact ? 'none' : 'block');
 
-    const display = props.activeContact ? 'none' : 'block'
+    //
+    useEffect(() => {
+        setDisplay(props.activeContact ? 'none' : 'block');
+    }, [props.activeContact]);
 
+    //
     const handleListItemClick = (event, index, user) => {
       setSelectedIndex(index);
       props.setActiveContact(user);
     };
   
-    React.useEffect(() => {
+    // 
+    useEffect(() => {
         if (props.activeContact === null) {
             setSelectedIndex(null);
         }
     }, [props.activeContact]);
 
-    React.useEffect(() => {
+    // 
+    useEffect(() => {
         axios.get('https://jsonplaceholder.typicode.com/users')
         .then((response) => {
             setUsers(response.data);
@@ -47,8 +54,8 @@ function ContactList(props) {
                         <List dense={false}>
                         {users.map((user, index) => 
                             <ListItemButton
-                            selected={selectedIndex === index}
-                            onClick={(event) => handleListItemClick(event, index, user)}
+                                selected={selectedIndex === index}
+                                onClick={(event) => handleListItemClick(event, index, user)}
                             >
                             <ListItemText primary={user.name}/>
                             </ListItemButton>
