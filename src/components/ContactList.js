@@ -49,8 +49,7 @@ function ContactList(props) {
                         loading
                     </h1>
                 ) : (
-                    <Paper elevation={3} style={{"height": "100%", overflow: 'auto'}}>
-                        
+                    <Paper elevation={8} sx={{minHeight: "100%", overflow: 'auto', padding: "10px"}}>
                         <List dense={false}>
                             {users.map((user, index) => 
                                 <ListItemButton
