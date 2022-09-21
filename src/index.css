@@ -32,3 +32,9 @@ a {
 .contact-address-item p {
   margin: 10px 0;
 }
+
+.list-summary {
+  font-size: 12px;
+  color: gray;
+  font-style: italic;
+}
