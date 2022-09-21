@@ -52,15 +52,18 @@ function ContactList(props) {
                     <Paper elevation={3} style={{"height": "100%", overflow: 'auto'}}>
                         
                         <List dense={false}>
-                        {users.map((user, index) => 
-                            <ListItemButton
-                                selected={selectedIndex === index}
-                                onClick={(event) => handleListItemClick(event, index, user)}
-                            >
-                            <ListItemText primary={user.name}/>
-                            </ListItemButton>
-                        )
-                        }
+                            {users.map((user, index) => 
+                                <ListItemButton
+                                    selected={selectedIndex === index}
+                                    onClick={(event) => handleListItemClick(event, index, user)}
+                                >
+                                    <ListItemText primary={user.name}/> 
+                                </ListItemButton>
+                            )
+                            }
+                            <ListItem> 
+                                <p className="list-summary">{users.length} Contacts</p>
+                            </ListItem>
                         </List>
                     </Paper>
                 )
