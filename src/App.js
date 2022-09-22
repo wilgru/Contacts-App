@@ -20,7 +20,6 @@ const theme = createTheme({
 
 function App() {
   const [activeContact, setActiveContact] = useState(null);
-  const [smallScreen, setSmallScreen] = useState( window.innerWidth <= 600 );
 
   return (
     <ThemeProvider theme={theme}>
