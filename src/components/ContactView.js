@@ -58,11 +58,11 @@ function ContactView(props) {
                             <Typography variant='p'>Address</Typography>
                         </Grid>
                         <Grid item md={4} xs={12}>
-                            <Paper className="contact-address-item" sx={{backgroundColor: 'primary.light'}}>
-                                <Typography variant='p'>{props.activeContact.address.street}</Typography>
-                                <Typography variant='p'>{props.activeContact.address.suite}</Typography>
-                                <Typography variant='p'>{props.activeContact.address.city}</Typography>
-                                <Typography variant='p'>{props.activeContact.address.zipcode}</Typography>
+                            <Paper sx={{backgroundColor: 'primary.light', padding: '10px 10px'}}>
+                                <Typography sx={{margin: '12px 0'}} variant='p'>{props.activeContact.address.street}</Typography><br></br>
+                                <Typography sx={{margin: '12px 0'}} variant='p'>{props.activeContact.address.suite}</Typography><br></br>
+                                <Typography sx={{margin: '12px 0'}} variant='p'>{props.activeContact.address.city}</Typography><br></br>
+                                <Typography sx={{margin: '12px 0'}} variant='p'>{props.activeContact.address.zipcode}</Typography><br></br>
                             </Paper>
                         </Grid>
                         <Grid item md={2} xs={0}>
@@ -82,7 +82,6 @@ function ContactView(props) {
                     </Grid>
                 </Paper>
             ) : (
-                // <Typography variant='p'>select a contact</Typography>
                 <>
                 </>
             )}
