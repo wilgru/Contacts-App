@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Grid, Paper, Button, Divider } from '@mui/material';
+import { Grid, Paper, Typography, Button, Divider } from '@mui/material';
 
 // import Button from '@mui/material/Button';
 // import Divider from '@mui/material/Divider';
@@ -25,15 +25,15 @@ function ContactView(props) {
                     </Button>
                     
                     <Grid className="contact-view-item" container flexDirection="column" justifyContent="space-between" wrap='wrap'>
-                        <h1>{props.activeContact.name}</h1>
-                        <p>{props.activeContact.company.name}</p>
+                        <Typography variant='h3'>{props.activeContact.name}</Typography>
+                        <Typography variant='p'>{props.activeContact.company.name}</Typography>
                     </Grid>
 
                     <Divider variant="middle" sx={{margin:'0'}}/>
 
                     <Grid className="contact-view-item" container justifyContent="space-between" wrap='wrap'>
                         <Grid item md={6} xs={12}>
-                            <p>Mobile Number</p>
+                        <Typography variant='p'>Mobile Number</Typography>
                         </Grid>
                         <Grid item md={6} xs={12} alignItems="center">
                             <a href = {`tel:${props.activeContact.phone}`}>{props.activeContact.phone}</a> 
@@ -44,7 +44,7 @@ function ContactView(props) {
 
                     <Grid className="contact-view-item" container justifyContent="space-between" wrap='wrap'>
                         <Grid item md={6} xs={12}>
-                            <p>Email</p>
+                            <Typography variant='p'>Email</Typography>
                         </Grid>
                         <Grid item md={6} xs={12}>
                             <a href = {`mailto: ${props.activeContact.email}`}>{props.activeContact.email}</a> 
@@ -55,14 +55,14 @@ function ContactView(props) {
 
                     <Grid className="contact-view-item" container justifyContent="space-between" wrap='wrap'>
                         <Grid item md={6} xs={12}>
-                            <p>Address</p>
+                            <Typography variant='p'>Address</Typography>
                         </Grid>
                         <Grid item md={4} xs={12}>
                             <Paper className="contact-address-item" sx={{backgroundColor: 'primary.light'}}>
-                                <p>{props.activeContact.address.street}</p>
-                                <p>{props.activeContact.address.suite}</p>
-                                <p>{props.activeContact.address.city}</p>
-                                <p>{props.activeContact.address.zipcode}</p>
+                                <Typography variant='p'>{props.activeContact.address.street}</Typography>
+                                <Typography variant='p'>{props.activeContact.address.suite}</Typography>
+                                <Typography variant='p'>{props.activeContact.address.city}</Typography>
+                                <Typography variant='p'>{props.activeContact.address.zipcode}</Typography>
                             </Paper>
                         </Grid>
                         <Grid item md={2} xs={0}>
@@ -74,7 +74,7 @@ function ContactView(props) {
 
                     <Grid className="contact-view-item" container justifyContent="space-between" wrap='wrap'>
                         <Grid item md={6} xs={12}>
-                            <p>Website</p>
+                            <Typography variant='p'>Website</Typography>
                         </Grid>
                         <Grid item md={6} xs={12}>
                             <a href = {props.activeContact.website}>{props.activeContact.website}</a>  
@@ -82,7 +82,7 @@ function ContactView(props) {
                     </Grid>
                 </Paper>
             ) : (
-                // <p>select a contact</p>
+                // <Typography variant='p'>select a contact</Typography>
                 <>
                 </>
             )}

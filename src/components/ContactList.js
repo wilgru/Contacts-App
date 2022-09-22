@@ -1,54 +1,45 @@
 import { useState, useEffect } from 'react';
-import { Grid, Paper, List, ListItemText, ListItemButton, ListItem } from '@mui/material';
+import { Grid, Paper, Typography, List, ListItemText, ListItemButton, ListItem } from '@mui/material';
 import axios from 'axios';
-
-// import List from '@mui/material/List';
-// import ListItemText from '@mui/material/ListItemText';
-// import ListItemButton from '@mui/material/ListItemButton';
-// import ListItem from '@mui/material/ListItem';
-// import TextField from '@mui/material/TextField';
-// import ListItemAvatar from '@mui/material/ListItemAvatar';
-// import ListItemIcon from '@mui/material/ListItemIcon';
 
 function ContactList(props) {
     const [selectedIndex, setSelectedIndex] = useState(1);
     const [users, setUsers] = useState(null);
     const [display, setDisplay] = useState(props.activeContact ? 'none' : 'block');
 
-    //
+    // update disaply value whenever a contact has been selected/ is active
     useEffect(() => {
         setDisplay(props.activeContact ? 'none' : 'block');
     }, [props.activeContact]);
 
-    //
+    // hanldet for clicking a list item, sets user and highlights the item in the list
     const handleListItemClick = (event, index, user) => {
       setSelectedIndex(index);
       props.setActiveContact(user);
     };
   
-    // 
+    // update selected index to highlight the item in the list
     useEffect(() => {
         if (props.activeContact === null) {
             setSelectedIndex(null);
         }
     }, [props.activeContact]);
 
-    // 
+    // get users from JSON placeholder API and set it to users state
     useEffect(() => {
         axios.get('https://jsonplaceholder.typicode.com/users')
         .then((response) => {
             setUsers(response.data);
-            console.log(users)
         });
     }, []);
 
     return (
-        <Grid item xs={12} md={3} sx={{display: { 'xs':display, 'md':'block' }}}>
+        <Grid item xs={12} md={3} sx={{display: { xs:display, md:'block' }}}>
             {
                 !users ? (
-                    <h1>
+                    <Typography variant='h4'>
                         loading
-                    </h1>
+                    </Typography>
                 ) : (
                     <Paper elevation={8} sx={{minHeight: "100%", overflow: 'auto', padding: "10px"}}>
                         <List dense={false}>
@@ -62,7 +53,7 @@ function ContactList(props) {
                             )
                             }
                             <ListItem> 
-                                <p className="list-summary">{users.length} Contacts</p>
+                                <Typography variant='p' className="list-summary">{users.length} Contacts</Typography>
                             </ListItem>
                         </List>
                     </Paper>
