@@ -44,11 +44,16 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <div className="App" style={{"display": "flex", "alignItems": "center", "height": "100vh"}}>
-        <Grid container spacing={2} style={{"padding": "40px", "height": "90vh"}}>
-          <ContactList setActiveContact={setActiveContact} activeContact={activeContact} isSmallScreen={smallScreen}></ContactList>
-          <ContactView setActiveContact={setActiveContact} activeContact={activeContact} isSmallScreen={smallScreen}></ContactView>
-        </Grid>
+      <div className="App" style={{"display": "flex", "flexDirection": "column", "height": "100vh"}}>
+        <div style={{"display": "flex", "alignItems": "center"}}>
+          <Grid container spacing={2} sx={{"padding": "40px", "height": "90vh"}}>
+            <Grid item xs={12}>
+              <h1 style={{textAlign:"left"}}>Contacts</h1>
+            </Grid>
+            <ContactList setActiveContact={setActiveContact} activeContact={activeContact} isSmallScreen={smallScreen}></ContactList>
+            <ContactView setActiveContact={setActiveContact} activeContact={activeContact} isSmallScreen={smallScreen}></ContactView>
+          </Grid>
+        </div>
       </div>
     </ThemeProvider>
   );
