@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 
 import { Grid, Paper, Typography } from '@mui/material';
 import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
-import { orange } from '@mui/material/colors';
 
 import ContactList from './components/ContactList'
 import ContactView from './components/ContactView'
@@ -11,18 +10,12 @@ import ContactView from './components/ContactView'
 const theme = createTheme({
   palette: {
     primary: {
-      light: orange[50],
-      main: orange[600],
-      dark: orange[700],
+      light: 'rgba(255, 140, 0, 0.08)',
+      main: 'rgb(255, 140, 0)',
+      dark: 'rgb(161, 81, 11)',
       contrastText: '#fff',
-    },
-    secondary: {
-      light: '#ff7961',
-      main: '#f44336',
-      dark: '#ba000d',
-      contrastText: '#000',
-    },
-  },
+    }
+  }
 });
 
 function App() {
