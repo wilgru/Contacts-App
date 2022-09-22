@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import { Grid, Paper } from '@mui/material';
+import { Grid, Paper, Button, Divider } from '@mui/material';
 
-import Button from '@mui/material/Button';
-import Divider from '@mui/material/Divider';
+// import Button from '@mui/material/Button';
+// import Divider from '@mui/material/Divider';
 
 function ContactView(props) {
     const [display, setDisplay] = useState(props.activeContact ? 'block' : 'none');
