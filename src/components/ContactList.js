@@ -37,8 +37,8 @@ function ContactList(props) {
         <Grid item xs={12} md={3} sx={{display: { xs:display, md:'block' }}}>
             {
                 !users ? (
-                    <Typography variant='h4'>
-                        loading
+                    <Typography variant='p'>
+                        Loading Contacts...
                     </Typography>
                 ) : (
                     <Paper elevation={8} sx={{minHeight: "100%", overflow: 'auto', padding: "10px"}}>
