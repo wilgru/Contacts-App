@@ -37,11 +37,11 @@ function ContactList(props) {
         <Grid item xs={12} md={3} sx={{display: { xs:display, md:'block' }}}>
             {
                 !users ? (
-                    <Typography variant='p'>
+                    <Typography variant='body1'>
                         Loading Contacts...
                     </Typography>
                 ) : (
-                    <Paper elevation={8} sx={{minHeight: "100%", overflow: 'auto', padding: "10px"}}>
+                    <Paper elevation={1} sx={{minHeight: "100%", overflow: 'auto', padding: "10px"}}>
                         <List dense={false}>
                             {users.map((user, index) => 
                                 <ListItemButton
@@ -53,7 +53,7 @@ function ContactList(props) {
                             )
                             }
                             <ListItem> 
-                                <Typography variant='p' className="list-summary">{users.length} Contacts</Typography>
+                                <Typography variant='body1' className="list-summary">{users.length} Contacts</Typography>
                             </ListItem>
                         </List>
                     </Paper>
