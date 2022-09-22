@@ -1,7 +1,7 @@
 import './App.css';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
-import { Grid, Paper, Typography } from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
 
 import ContactList from './components/ContactList'
@@ -22,18 +22,6 @@ function App() {
   const [activeContact, setActiveContact] = useState(null);
   const [smallScreen, setSmallScreen] = useState( window.innerWidth <= 600 );
 
-  useEffect(() => {
-    function handleWindowResize() {
-      setSmallScreen( window.innerWidth <= 600 )
-    }
-
-    window.addEventListener('resize', handleWindowResize);
-
-    return () => {
-      window.removeEventListener('resize', handleWindowResize);
-    };
-  }, []);
-
   return (
     <ThemeProvider theme={theme}>
       <div className="App" style={{"display": "flex", "flexDirection": "column", "height": "100vh"}}>
@@ -42,8 +30,8 @@ function App() {
             <Grid item xs={12}>
               <Typography variant='h4' sx={{textAlign:{xs:"center", md:"left"}}}>Contacts</Typography>
             </Grid>
-            <ContactList setActiveContact={setActiveContact} activeContact={activeContact} isSmallScreen={smallScreen}></ContactList>
-            <ContactView setActiveContact={setActiveContact} activeContact={activeContact} isSmallScreen={smallScreen}></ContactView>
+            <ContactList setActiveContact={setActiveContact} activeContact={activeContact}></ContactList>
+            <ContactView setActiveContact={setActiveContact} activeContact={activeContact}></ContactView>
           </Grid>
         </div>
       </div>
