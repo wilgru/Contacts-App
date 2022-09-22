@@ -30,4 +30,4 @@ The app is fairly simple to use, just select a contact from the list on the left
 
 ## Link
 
-You can visit a link to the deployed React app here: 
+You can visit a link to the deployed React app here: wilgru.github.io/Contacts-App/
