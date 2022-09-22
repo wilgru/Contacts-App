@@ -2,7 +2,7 @@ import './App.css';
 import { useState } from 'react';
 
 import { Grid, Typography } from '@mui/material';
-import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 import ContactList from './components/ContactList'
 import ContactView from './components/ContactView'
