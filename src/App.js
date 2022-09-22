@@ -1,13 +1,12 @@
 import './App.css';
 import { useState, useEffect } from 'react';
 
-import { Grid, Paper } from '@mui/material';
+import { Grid, Paper, Typography } from '@mui/material';
 import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
 import { orange } from '@mui/material/colors';
 
 import ContactList from './components/ContactList'
 import ContactView from './components/ContactView'
-
 
 const theme = createTheme({
   palette: {
@@ -48,7 +47,7 @@ function App() {
         <div style={{"display": "flex", "alignItems": "center"}}>
           <Grid container spacing={2} sx={{"padding": "40px", "height": "90vh"}}>
             <Grid item xs={12}>
-              <h1 style={{textAlign:"left"}}>Contacts</h1>
+              <Typography variant='h4' sx={{textAlign:{xs:"center", md:"left"}}}>Contacts</Typography>
             </Grid>
             <ContactList setActiveContact={setActiveContact} activeContact={activeContact} isSmallScreen={smallScreen}></ContactList>
             <ContactView setActiveContact={setActiveContact} activeContact={activeContact} isSmallScreen={smallScreen}></ContactView>
