@@ -18,7 +18,7 @@ Once the the code in on your computer cd into that folder from your terminal and
 cd Contacts-App/ && npm install
 ```
 
-Whiles still in that folder form your terminal, you can run the React development server to use the app, and to see live updates if you were to make any changes to the source code:
+Whiles still in that folder from your terminal, you can run the React development server to use the app, and to see live updates if you were to make any changes to the source code. To do so, run the following npm command:
 
 ```
 npm run develop
