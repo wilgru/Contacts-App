@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/wilgru/Contacts-App/static/css/main.f998f6dc.css",
+    "main.js": "/wilgru/Contacts-App/static/js/main.6d267aa6.js",
+    "index.html": "/wilgru/Contacts-App/index.html",
+    "main.f998f6dc.css.map": "/wilgru/Contacts-App/static/css/main.f998f6dc.css.map",
+    "main.6d267aa6.js.map": "/wilgru/Contacts-App/static/js/main.6d267aa6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f998f6dc.css",
+    "static/js/main.6d267aa6.js"
+  ]
+}
